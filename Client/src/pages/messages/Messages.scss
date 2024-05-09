@@ -1,0 +1,53 @@
+.Message {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 1200px;
+    padding: 50px 0px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        height: 100px;
+
+        th {
+          text-align: left;
+        }
+
+        td {
+          padding: 10px;
+
+          &:first-child {
+            font-weight: 500;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            color: rgb(10, 9, 9);
+          }
+  
+        }
+        button {
+          background-color: #1cb573;
+          color: rgb(19, 18, 18);
+          padding: 10px;
+          border: none;
+          cursor: pointer;
+          border-radius: 20px;
+        }
+      
+          &.active {
+            background-color: #86bf960f;
+          }
+        }
+      }
+    }
+  }
+

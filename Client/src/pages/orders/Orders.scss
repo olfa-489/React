@@ -1,0 +1,65 @@
+.orders {
+  display: flex;
+  justify-content: center;
+  color: #555;
+
+  .container {
+    width: 100%; /* Utilise la pleine largeur de son parent */
+    max-width: 1400px; /* Limite la largeur maximale pour une meilleure lisibilité */
+    padding: 30px 20px; /* Ajuste le rembourrage pour les petits écrans */
+    gap: 80px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: #1dbf73;
+        color: white;
+        font-weight: 500;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px; /* Ajoute un espacement supplémentaire en haut pour les petits écrans */
+
+      tr {
+        height: 40px; /* Réduit la hauteur des lignes pour économiser de l'espace */
+        th {
+          text-align: left;
+        }
+        td {
+          padding: 10px;
+
+          sup {
+            font-size: 12px;
+          }
+
+          .image {
+            width: 40px;
+            height: 20px;
+            object-fit: cover;
+          }
+
+          .message {
+            width: 16px; /* Réduit la taille de l'icône de message pour économiser de l'espace */
+            cursor: pointer;
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: #1dbf730f;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding: 50px 0px; /* Rétablit le rembourrage pour les grands écrans */
+    }
+  }
+}

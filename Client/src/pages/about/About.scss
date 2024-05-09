@@ -1,0 +1,34 @@
+.about-container {
+  width: 100%; /* Ajustez la largeur selon vos besoins */
+  max-width: 1000px;
+  margin: 0 auto; /* Centrez le conteneur horizontalement */
+  padding: 20px;
+  text-align: center;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #013914;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #444;
+  }
+
+  .eco-gest-image {
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    max-width: 600px; /* Définissez une largeur maximale pour l'image */
+    margin: 0 auto; /* Centrez l'image horizontalement */
+    display: block; /* Permet de centrer l'image */
+    border-radius: 10px; /* Ajoutez des coins arrondis à l'image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajoutez une ombre légère */
+    transition: transform 0.3s ease; /* Ajoutez une transition fluide lors du survol */
+
+    &:hover {
+      transform: scale(1.05); /* Agrandir légèrement l'image lors du survol */
+    }
+  }
+}

@@ -1,0 +1,80 @@
+/* Success.css */
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensure page covers entire viewport */
+  background-color: #f0f2f5; /* Light background color */
+  gap: 60px;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-text {
+  font-size: 60px;
+  font-weight: bold;
+  color: #333; /* Darker text color */
+  margin-bottom: 20px;
+  animation: textScaleUp 0.5s ease-in-out forwards;
+}
+
+@keyframes textScaleUp {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-message {
+  font-size: 30px;
+  color: #28a745; /* Green success message color */
+  margin-bottom: 30px;
+  animation: textPulse 1s ease-in-out forwards infinite alternate;
+}
+
+@keyframes textPulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+.button {
+  background-color: #4CAF50; /* Green button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  animation: buttonPop 0.5s ease-in-out forwards;
+}
+
+@keyframes buttonPop {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
