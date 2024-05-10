@@ -1,21 +1,13 @@
 export const INITIAL_STATE = {
-  userId: (() => {
-    const currentUser = localStorage.getItem('currentUser');
-    if (currentUser) {
-      try {
-        return JSON.parse(currentUser)._id;
-      } catch (error) {
-        console.error('Error parsing currentUser:', error);
-      }
-    }
-    return null;
-  })(),
+  userId: JSON.parse(localStorage.getItem('currentUser'))?._id,
+
   title: '',
   descr: '',
   categ: '',
   cover: '',
   images: [],
 };
+
 export const gigReducer = (state, action) => {
   switch (action.type) {
     case 'CHANGE_INPUT':

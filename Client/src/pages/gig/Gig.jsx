@@ -58,12 +58,12 @@ function Gig() {
               </div>
             )}
             <Slider slidesToShow={1} arrowsScroll={1} className="slider">
-              {data && data.map((img) => (
+              {data.images.map((img) => (
                 <img key={img} src={img} alt="" />
               ))}
             </Slider>
             <h2>A propos ce service</h2>
-            <p>{data.desc}</p>
+            <p>{data.descr}</p>
             {isLoadingUser ? (
               'loading'
             ) : errorUser ? (

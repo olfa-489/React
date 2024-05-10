@@ -1,19 +1,20 @@
-import axios  from "axios";
-
+import axios from 'axios';
 
 const upload = async (file) => {
   const data = new FormData();
   data.append('file', file);
-  data.append('upload_preset', 'ecogest');
+  data.append('upload_preset', 'ovc');
 
   try {
-    const res = await axios.post("http://api.cloudinary.com/v1_1/ecogest/image/upload", data);
+    const res = await axios.post(
+      'https://api.cloudinary.com/v1_1/ecogest/image/upload',
+      data
+    );
 
-    const {url} = res.data;
+    const { url } = res.data;
     return url;
-  } catch (error) {
-    console.error('Error uploading file:', error);
-    throw error; // Rethrow the error to propagate it to the caller
+  } catch (err) {
+    console.log(err);
   }
 };
 
