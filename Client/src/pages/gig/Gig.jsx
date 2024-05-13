@@ -4,6 +4,7 @@ import { Slider } from 'infinite-react-carousel/lib';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import newRequest from '../../utils/newRequest';
+import { Link } from 'react-router-dom';
 
 function Gig() {
   const { id } = useParams();
@@ -74,7 +75,9 @@ function Gig() {
                 <div className="user">
                   <img src={dataUser.img || '/img/noavatar.jpg'} alt="" />
                   <div className="info">
-                    <button>Contacter moi</button>
+                    <Link to="/message/:id">
+                      <button>Contactez-moi</button>
+                    </Link>
                   </div>
                 </div>
                 <div className="box">

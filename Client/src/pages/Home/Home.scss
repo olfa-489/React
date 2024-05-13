@@ -95,13 +95,13 @@
       }
     }
 
-    //   &.reverse {
-    //     background-color: #0d084d;
-    //     color: white;
-    //     .container {
-    //       flex-direction: row-reverse;
-    //     }
-    //   }
+      &.reverse {
+       background-color: #0d084d;
+        color: white;
+        .container {
+           flex-direction: row-reverse;
+         }
+       }
   }
 
   .explore {

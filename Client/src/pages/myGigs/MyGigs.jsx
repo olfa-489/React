@@ -13,17 +13,21 @@ function MyGigs() {
   const { isLoading, error, data } = useQuery({
     queryKey: ['myGigs'],
     queryFn: () =>
-      newRequest.get(`/gigs?userId=${currentUser.id}`).then((res) => {
-        return res.data;
-      }),
+      newRequest
+        .get(`/gigs/?userId=${currentUser._id}`)
+        .then((res) => {
+          console.log('Data from backend:', res.data);
+          return res.data;
+        })
+        .catch((error) => {
+          console.error('Error fetching data:', error);
+          throw error; // Rethrow the error to be handled by React Query
+        }),
   });
 
   const mutation = useMutation({
     mutationFn: (id) => {
       return newRequest.delete(`/gigs/${id}`);
-    },
-    onSuccess: () => {
-      queryClient.invalidateQueries(['myGigs']);
     },
   });
 
@@ -48,17 +52,17 @@ function MyGigs() {
             )}
           </div>
           <table>
-            <thead>
+            <tbody>
               <tr>
                 <th>Image</th>
-                <th>Titre</th>
+                <th>Title</th>
+
+                <th>Action</th>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((gig) => (
+              {data?.map((gig) => (
                 <tr key={gig._id}>
                   <td>
-                    <img className="image" src={gig.cover} alt="" />
+                    <img className="image" src={gig.imgC} alt="" />
                   </td>
                   <td>{gig.title}</td>
                   <td>

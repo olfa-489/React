@@ -2,10 +2,9 @@ import React from 'react';
 import './Home.scss';
 import Featured from '../../components/featured/Featured';
 import Slide from '../../components/slide/Slide';
-import { cards ,projects} from '../../data.js';
+import { cards, projects } from '../../data.js';
 import CatCard from '../../components/catCard/CatCard';
 import ProjectCard from '../../components/projectCard/ProjectCard';
-
 
 const Home = () => {
   return (
@@ -47,7 +46,7 @@ const Home = () => {
             </p>
           </div>
           <div className="item">
-            <video src="./images/video.mp4" ></video>
+            <video src="./images/video.mp4"></video>
           </div>
         </div>
       </div>

@@ -3,11 +3,11 @@ import axios from 'axios';
 const upload = async (file) => {
   const data = new FormData();
   data.append('file', file);
-  data.append('upload_preset', 'ovc');
+  data.append('upload_preset', 'cherchili');
 
   try {
     const res = await axios.post(
-      'https://api.cloudinary.com/v1_1/ecogest/image/upload',
+      'https://api.cloudinary.com/v1_1/dut01wiyq/image/upload',
       data
     );
 

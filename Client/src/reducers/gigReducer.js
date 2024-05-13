@@ -4,7 +4,7 @@ export const INITIAL_STATE = {
   title: '',
   descr: '',
   categ: '',
-  cover: '',
+  imgC: '',
   images: [],
 };
 
@@ -18,7 +18,7 @@ export const gigReducer = (state, action) => {
     case 'ADD_IMAGES':
       return {
         ...state,
-        cover: action.payload.cover,
+        imgC: action.payload.imgC,
         images: action.payload.images,
       };
 

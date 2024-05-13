@@ -29,9 +29,7 @@ function Gigs() {
     <div className="gigs">
       <div className="container">
         <span className="breadcrumbs">Eco.Gest | Déchets domestiques </span>
-        <h1></h1>
 
-        <div className="menu"></div>
         <div className="cards">
           {isLoading
             ? 'loading'

@@ -17,7 +17,7 @@ const gigSchema = new Schema(
     categ: {
       type: String,
     },
-    cover: {
+    imgC: {
       type: String,
       required: true,
     },

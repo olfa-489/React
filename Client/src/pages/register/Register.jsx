@@ -24,31 +24,26 @@ function Register() {
     });
   };
 
-  const handleSellerToggle = (e) => {
-    setUser((prev) => {
-      return { ...prev, isSeller: e.target.checked };
-    });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+   const handleSeller = (e) => {
+     setUser((prev) => {
+       return { ...prev, isSeller: e.target.checked };
+     });
+   };
+   const handleSubmit = async (e) => {
+     e.preventDefault();
 
-     // Check for empty fields
-     if (!username || !email || !password || !file || !country) {
-       alert('priére de remplir tous les champs !');
-       return; // Prevent navigation
+     const url = await upload(file);
+     try {
+       await newRequest.post('/auth/register', {
+         ...user,
+         img: url,
+       });
+       navigate('/success');
+     } catch (err) {
+       console.log(err);
      }
+   };
 
-    const url = await upload(file);
-    try {
-      await newRequest.post('/auth/register', {
-        ...user,
-        img: url,
-      });
-      navigate('/success');
-    } catch (err) {
-      console.log(err);
-    }
-  };
 
   return (
     <div className="register">
@@ -95,7 +90,9 @@ function Register() {
             onChange={handleChange}
           />
 
-          <button type="submit" onChange={handleSubmit}>Rejoindre</button>
+          <button type="submit" onChange={handleSubmit}>
+            Rejoindre
+          </button>
         </div>
 
         <div className="right">
@@ -106,7 +103,7 @@ function Register() {
               <input
                 id="sellerToggle"
                 type="checkbox"
-                onChange={handleSellerToggle}
+                onChange={handleSeller}
               />
               <span className="slider round"></span>
             </label>
